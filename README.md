@@ -9,10 +9,7 @@ Personal website built with Next.js, TypeScript and Tailwind. Work in progress.
 - Tailwind
 - Vercel
 
-
 Leaving original create next app readme content here for now.
-
-
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
