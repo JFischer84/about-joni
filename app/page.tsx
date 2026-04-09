@@ -48,7 +48,7 @@ export default function Home() {
       ([entry]) => {
         setStickyVisible(!entry.isIntersecting);
       },
-      { threshold: 0.1 }, // wenn nur 10% der Hero Section sichtbar sind
+      { threshold: 0, rootMargin: "-64px 0px 0px 0px" },
     );
 
     if (navRef.current) {
@@ -106,7 +106,7 @@ export default function Home() {
             <a
               key={name}
               href={`#${id}`}
-              className={`${colors[i]} rounded-xl px-6 py-3 text-white shadow-lg ${shadows[i]} transition-opacity hover:opacity-80`}
+              className={`${colors[i]} rounded-xl px-6 py-3 text-white shadow-lg ${shadows[i]} transition-opacity hover:opacity-80 ${!stickyVisible ? "opacity-100" : "pointer-events-none opacity-0"}`}
             >
               {name}
             </a>
@@ -115,7 +115,7 @@ export default function Home() {
       </section>
 
       <div
-        className={`fixed top-0 left-0 z-50 flex w-full justify-center gap-4 bg-neutral-900/60 px-6 py-4 backdrop-blur transition-opacity duration-500 ${
+        className={`fixed top-0 left-0 z-50 flex w-full justify-center gap-4 bg-neutral-900/60 px-6 py-4 backdrop-blur ${
           stickyVisible ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
