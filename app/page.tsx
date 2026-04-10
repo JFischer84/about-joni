@@ -1,45 +1,11 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { navItems, NavItemType, sectionData } from "@/app/sectionData";
+import { Section } from "@/app/Section/Section";
+import { NavButton } from "@/app/NavButton/NavButton";
 
 export default function Home() {
-  type SectionType = {
-    name: string;
-    id: string;
-  };
-
-  const textColors = [
-    "text-purple-300",
-    "text-pink-300",
-    "text-blue-300",
-    "text-indigo-300",
-    "text-fuchsia-300",
-  ];
-
-  const colors = [
-    "bg-purple-400",
-    "bg-pink-400",
-    "bg-blue-400",
-    "bg-indigo-400",
-    "bg-fuchsia-400",
-  ];
-
-  const shadows = [
-    "shadow-purple-500/30",
-    "shadow-pink-500/30",
-    "shadow-blue-500/30",
-    "shadow-indigo-500/30",
-    "shadow-fuchsia-500/30",
-  ];
-
-  const sections = [
-    { name: "About Me", id: "about" },
-    { name: "Work & Skills", id: "skills" },
-    { name: "Hobbies & Interests", id: "interests" },
-    { name: "Fun Facts", id: "fun-facts" },
-    { name: "Contact", id: "contact" },
-  ];
-
   const [stickyVisible, setStickyVisible] = useState(false);
   const navRef = useRef<HTMLDivElement | null>(null);
 
@@ -60,37 +26,8 @@ export default function Home() {
     };
   }, []);
 
-  const createSection = (
-    sectionId: string,
-    sectionName: string,
-    index: number,
-  ) => (
-    <section
-      key={sectionId}
-      id={sectionId}
-      className="flex min-h-screen flex-col items-center justify-start px-6 py-20 pt-32"
-    >
-      <h2
-        className={`mb-6 text-3xl font-bold md:text-4xl ${textColors[index]}`}
-      >
-        {sectionName}
-      </h2>
-      <p className="mx-auto max-w-2xl leading-relaxed text-gray-300">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-        ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
-        quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
-        arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-        Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
-        dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend
-        tellus. Aenean leo ligula, porttitor eu, consequat vitae
-      </p>
-    </section>
-  );
-
   return (
-    <main className="bg-neutral-900 text-center">
+    <main id="top" className="bg-neutral-900 text-center">
       <section className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
         <h1 className="mb-4 text-5xl font-bold text-purple-300 drop-shadow-[0_0_10px_rgba(168,85,247,0.4)]">
           Hi, my name is Joni 👋
@@ -102,14 +39,14 @@ export default function Home() {
           ref={navRef}
           className="top-0 mt-8 flex flex-wrap justify-center gap-4"
         >
-          {sections.map(({ name, id }: SectionType, i: number) => (
-            <a
-              key={name}
+          {navItems.map(({ name, id, color, shadow }: NavItemType) => (
+            <NavButton
+              className={`${color} ${shadow} ${id === "top" && !stickyVisible ? "invisible" : ""}`}
               href={`#${id}`}
-              className={`${colors[i]} rounded-xl px-6 py-3 text-white shadow-lg ${shadows[i]} transition-opacity hover:opacity-80 ${!stickyVisible ? "opacity-100" : "pointer-events-none opacity-0"}`}
+              key={id}
             >
               {name}
-            </a>
+            </NavButton>
           ))}
         </div>
       </section>
@@ -119,18 +56,16 @@ export default function Home() {
           stickyVisible ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
-        {sections.map(({ name, id }: SectionType, i: number) => (
-          <a
-            key={name}
-            href={`#${id}`}
-            className={`${colors[i]} rounded-xl px-6 py-3 text-white shadow-lg ${shadows[i]} transition-opacity hover:opacity-80`}
-          >
+        {navItems.map(({ name, id, color, shadow }: NavItemType) => (
+          <NavButton className={`${color} ${shadow}`} href={`#${id}`} key={id}>
             {name}
-          </a>
+          </NavButton>
         ))}
       </div>
 
-      {sections.map((section, i) => createSection(section.id, section.name, i))}
+      {sectionData.map(({ id, name, textColor }) => (
+        <Section key={id} id={id} name={name} textColor={textColor} />
+      ))}
     </main>
   );
 }
