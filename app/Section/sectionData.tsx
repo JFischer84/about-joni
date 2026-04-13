@@ -1,15 +1,3 @@
-import { ArrowUp } from "lucide-react";
-import { ReactNode } from "react";
-
-export type SectionId = (typeof sectionData)[number]["id"];
-
-export type NavItemType = {
-  id: SectionId | "top";
-  name: string | ReactNode;
-  color: string;
-  shadow: string;
-};
-
 export const sectionData = [
   {
     id: "about",
@@ -47,18 +35,3 @@ export const sectionData = [
     shadow: "shadow-fuchsia-500/30",
   },
 ] as const;
-
-export const navItems: NavItemType[] = [
-  ...sectionData.map((section) => ({
-    id: section.id,
-    name: section.name,
-    color: section.color,
-    shadow: section.shadow,
-  })),
-  {
-    id: "top",
-    name: <ArrowUp />,
-    color: "bg-emerald-400",
-    shadow: "shadow-emerald-500/30",
-  },
-];

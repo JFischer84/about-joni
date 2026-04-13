@@ -1,16 +1,7 @@
-import { sectionData, navItems } from "./sectionData";
+import { navItems } from "@/app/Navigation/navData";
+import { sectionData } from "@/app/Section/sectionData";
 
-describe("sectionData", () => {
-  it("has stable ids", () => {
-    expect(sectionData.map((s) => s.id)).toEqual([
-      "about",
-      "skills",
-      "interests",
-      "fun-facts",
-      "contact",
-    ]);
-  });
-
+describe("navData", () => {
   it("navItems includes all section ids", () => {
     const sectionIds = sectionData.map((s) => s.id);
     const navIds = navItems.map((n) => n.id);
