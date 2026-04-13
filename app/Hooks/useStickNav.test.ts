@@ -1,4 +1,4 @@
-import { renderHook } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react";
 import { useStickyNav } from "./useStickyNav";
 import { createRef } from "react";
 
@@ -26,10 +26,12 @@ describe("useStickyNav", () => {
 
     const { result } = renderHook(() => useStickyNav(ref));
 
-    callback(
-      [{ isIntersecting: false } as IntersectionObserverEntry],
-      {} as unknown as IntersectionObserver,
-    );
+    act(() => {
+      callback(
+        [{ isIntersecting: false } as IntersectionObserverEntry],
+        {} as unknown as IntersectionObserver,
+      );
+    });
 
     expect(result.current).toBe(true);
   });
@@ -40,7 +42,12 @@ describe("useStickyNav", () => {
 
     const { result } = renderHook(() => useStickyNav(ref));
 
-    callback([{ isIntersecting: true } as IntersectionObserverEntry]);
+    act(() => {
+      callback(
+        [{ isIntersecting: true } as IntersectionObserverEntry],
+        {} as unknown as IntersectionObserver,
+      );
+    });
 
     expect(result.current).toBe(false);
   });
