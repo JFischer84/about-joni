@@ -1,14 +1,14 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { sectionData } from "@/app/Section/sectionData";
+import { sectionData } from "@/app/config/sections";
 import { Section } from "@/app/Section/Section";
 
-import { HeroNav } from "@/app/Navigation/HeroNav/HeroNav";
-import { StickyNav } from "@/app/Navigation/StickyNav/StickyNav";
+import { DesktopNav } from "@/app/Navigation/DesktopNav/DesktopNav";
 import { MobileNav } from "@/app/Navigation/MobileNav/MobileNav";
 import { useStickyNav } from "@/app/Hooks/useStickyNav";
 import { useIsAtTop } from "@/app/Hooks/useIsAtTop";
+import { navItems } from "@/app/config/navigation";
 
 export default function Home() {
   const navRef = useRef<HTMLDivElement | null>(null);
@@ -21,6 +21,7 @@ export default function Home() {
   return (
     <main id="top" className="bg-neutral-900 text-center">
       <MobileNav
+        navItems={navItems}
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         isAtTop={isAtTop}
@@ -36,14 +37,13 @@ export default function Home() {
         </p>
 
         <div className={menuOpen ? "hidden md:flex" : ""}>
-          <HeroNav navRef={navRef} stickyVisible={stickyVisible} />
+          <DesktopNav
+            navItems={navItems}
+            navRef={navRef}
+            stickyVisible={stickyVisible}
+          />
         </div>
       </section>
-
-      <div className={menuOpen ? "hidden md:flex" : ""}>
-        <StickyNav stickyVisible={stickyVisible} />
-      </div>
-
       {sectionData.map(({ id, name, textColor }) => (
         <Section key={id} id={id} name={name} textColor={textColor} />
       ))}

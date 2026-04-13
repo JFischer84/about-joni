@@ -1,4 +1,4 @@
-import { sectionData } from "./sectionData";
+import { sectionData } from "./sections";
 
 describe("sectionData", () => {
   it("has stable ids", () => {

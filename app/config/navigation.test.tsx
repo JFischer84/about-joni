@@ -1,5 +1,5 @@
-import { navItems } from "@/app/Navigation/navData";
-import { sectionData } from "@/app/Section/sectionData";
+import { navItems } from "@/app/config/navigation";
+import { sectionData } from "@/app/config/sections";
 
 describe("navData", () => {
   it("navItems includes all section ids", () => {

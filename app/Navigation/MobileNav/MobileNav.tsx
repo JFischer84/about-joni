@@ -1,15 +1,17 @@
 import { NavButton } from "@/app/Navigation/NavButton/NavButton";
 import { Dispatch, SetStateAction } from "react";
 import { Menu, X } from "lucide-react";
-import { navItems } from "@/app/Navigation/navData";
+import { NavItemType } from "@/app/Navigation/types";
 
 type MobileNavPropsType = {
+  navItems: NavItemType[];
   menuOpen: boolean;
   setMenuOpen: Dispatch<SetStateAction<boolean>>;
   isAtTop: boolean;
 };
 
 export const MobileNav = ({
+  navItems,
   menuOpen,
   setMenuOpen,
   isAtTop,

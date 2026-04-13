@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { SectionId } from "@/app/Section/sectionData";
+import { SectionId } from "@/app/config/sections";
 
 export type NavItemType = {
   id: SectionId | "top";

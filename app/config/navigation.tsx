@@ -1,4 +1,4 @@
-import { sectionData } from "@/app/Section/sectionData";
+import { sectionData } from "@/app/config/sections";
 import { ArrowUp } from "lucide-react";
 import { NavItemType } from "@/app/Navigation/types";
 
