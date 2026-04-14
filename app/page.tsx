@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { sectionData } from "@/app/config/sections";
 import { Section } from "@/app/Section/Section";
 
@@ -28,12 +29,19 @@ export default function Home() {
       />
 
       <section className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
+        <Image
+          src="/images/me.jpg"
+          alt="Portrait of me"
+          width={192}
+          height={192}
+          className="mb-8 h-64 w-64 rounded-full object-cover shadow-lg ring-1 ring-purple-400/50 drop-shadow-[0_0_12px_rgba(168,85,247,0.2)] transition-transform duration-300 hover:scale-105"
+        />
         <h1 className="mb-4 text-5xl font-bold text-purple-300 drop-shadow-[0_0_10px_rgba(168,85,247,0.4)]">
           Hi, my name is Joni 👋
         </h1>
 
         <p className="mb-6 text-lg text-gray-300">
-          I am a Frontend Developer with focus on TypeScript & React
+          I am a Fullstack Developer with focus on TypeScript & React
         </p>
 
         <div className={menuOpen ? "hidden md:flex" : ""}>
