@@ -30,7 +30,7 @@ export default function Home() {
 
       <section className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
         <Image
-          src="/images/me.jpg"
+          src="/images/me.webp"
           alt="Portrait of me"
           width={192}
           height={192}
