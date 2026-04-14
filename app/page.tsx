@@ -41,7 +41,7 @@ export default function Home() {
         </h1>
 
         <p className="mb-6 text-lg text-gray-300">
-          I am a Fullstack Developer with focus on TypeScript & React
+          Full-Stack Developer focused on TypeScript & React
         </p>
 
         <div className={menuOpen ? "hidden md:flex" : ""}>

@@ -18,6 +18,18 @@ export const metadata: Metadata = {
   icons: {
     icon: "favicons/favicon.ico",
   },
+  openGraph: {
+    title: "About Joni",
+    description: "A website about Joni",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Joni Portfolio Preview",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
