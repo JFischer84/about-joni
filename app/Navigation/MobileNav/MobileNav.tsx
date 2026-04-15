@@ -37,6 +37,7 @@ export const MobileNav = ({
       </button>
 
       <div
+        data-testid="mobile-menu"
         className={`fixed inset-0 z-50 flex flex-col items-center justify-center gap-6 bg-neutral-900/80 backdrop-blur-md transition-all duration-300 md:hidden ${
           menuOpen
             ? "pointer-events-auto scale-100 opacity-100"
