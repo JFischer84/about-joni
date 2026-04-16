@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
-import { sectionData } from "@/app/config/sections";
+import { sectionContent, sectionData } from "@/app/config/sections";
 import { Section } from "@/app/Section/Section";
 
 import { DesktopNav } from "@/app/Navigation/DesktopNav/DesktopNav";
@@ -52,9 +52,19 @@ export default function Home() {
           />
         </div>
       </section>
-      {sectionData.map(({ id, name, textColor }) => (
-        <Section key={id} id={id} name={name} textColor={textColor} />
-      ))}
+      {sectionData.map(({ id, name, textColor }) => {
+        const content = sectionContent.find((c) => c.id === id);
+        return (
+          <Section
+            key={id}
+            id={id}
+            name={name}
+            textColor={textColor}
+            text={content ? content.text : ""}
+            items={content ? content.items : []}
+          />
+        );
+      })}
     </main>
   );
 }
