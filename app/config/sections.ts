@@ -1,3 +1,5 @@
+import { SectionContent } from "@/app/Section/types";
+
 export const sectionData = [
   {
     id: "about",
@@ -5,6 +7,7 @@ export const sectionData = [
     color: "bg-purple-400",
     textColor: "text-purple-300",
     shadow: "shadow-purple-500/30",
+    glow: "bg-purple-500",
   },
   {
     id: "skills",
@@ -12,6 +15,7 @@ export const sectionData = [
     color: "bg-pink-400",
     textColor: "text-pink-300",
     shadow: "shadow-pink-500/30",
+    glow: "bg-pink-500",
   },
   {
     id: "interests",
@@ -19,6 +23,7 @@ export const sectionData = [
     color: "bg-blue-400",
     textColor: "text-blue-300",
     shadow: "shadow-blue-500/30",
+    glow: "bg-blue-500",
   },
   {
     id: "fun-facts",
@@ -26,6 +31,7 @@ export const sectionData = [
     color: "bg-indigo-400",
     textColor: "text-indigo-300",
     shadow: "shadow-indigo-500/30",
+    glow: "bg-indigo-500",
   },
   {
     id: "contact",
@@ -33,10 +39,11 @@ export const sectionData = [
     color: "bg-fuchsia-400",
     textColor: "text-fuchsia-300",
     shadow: "shadow-fuchsia-500/30",
+    glow: "bg-fuchsia-500",
   },
 ] as const;
 
-export const sectionContent = [
+export const sectionContent: SectionContent[] = [
   {
     id: "about",
     text: `Hi, I'm Joni (she/her), a software developer based in Hamburg, Germany. I started my journey in software development in 2015 and have been working in the field ever since.
@@ -74,14 +81,17 @@ export const sectionContent = [
       {
         label: "GitHub",
         href: "https://github.com/JFischer84",
+        icon: "github",
       },
       {
         label: "LinkedIn",
         href: "https://www.linkedin.com/in/joni-fischer-91b58630b",
+        icon: "linkedin",
       },
       {
         label: "Xing",
         href: "https://www.xing.com/profile/Joni_Fischer061043",
+        icon: "xing",
       },
     ],
   },

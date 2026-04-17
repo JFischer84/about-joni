@@ -52,7 +52,7 @@ export default function Home() {
           />
         </div>
       </section>
-      {sectionData.map(({ id, name, textColor }) => {
+      {sectionData.map(({ id, name, textColor, glow }) => {
         const content = sectionContent.find((c) => c.id === id);
         return (
           <Section
@@ -60,6 +60,7 @@ export default function Home() {
             id={id}
             name={name}
             textColor={textColor}
+            glow={glow}
             text={content ? content.text : ""}
             items={content ? content.items : []}
           />
