@@ -40,7 +40,7 @@ export const sectionContent = [
   {
     id: "about",
     text: `Hi, I'm Joni (she/her), a software developer based in Hamburg, Germany. I started my journey in software development in 2015 and have been working in the field ever since.
-    Over the years, I've grown from a curious beginner into an experienced developer with a strong focus on building reliable and maintainable applications.
+    Over the years, I’ve developed a strong focus on building reliable and maintainable applications.
     I enjoy creating clean, well-structured code and continuously improving both my technical and collaborative skills.`,
   },
   {
