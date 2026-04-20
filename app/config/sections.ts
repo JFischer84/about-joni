@@ -61,7 +61,7 @@ export const sectionContent: SectionContent[] = [
   {
     id: "interests",
     text: `Outside of work, I enjoy spending time on creative and social hobbies.
-    I regularly play pen & paper role-playing games and board games with friends.
+    I regularly play pen-and-paper role-playing games and board games with friends.
     I also produce electronic music and enjoy experimenting with sounds and composition.
     In addition, I like playing video games and have a particular interest in retro gaming.`,
   },
@@ -70,8 +70,8 @@ export const sectionContent: SectionContent[] = [
     items: [
       "I love cats. This is non-negotiable. 🐱",
       "Bananas and I don’t get along, yet KiBa still gets a pass.",
-      "I once gave a full presentation to my gaming group to pitch new Pen & Paper RPGs.",
-      "I used to run a YouTube channel about Pen & Paper RPGs.",
+      "I once gave a full presentation to my gaming group to pitch new pen-and-paper RPGs.",
+      "I used to run a YouTube channel about pen-and-paper RPGs.",
     ],
   },
 
