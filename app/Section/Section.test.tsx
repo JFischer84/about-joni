@@ -4,13 +4,25 @@ import { Section } from "./Section";
 
 describe("Section", () => {
   it("renders title", () => {
-    render(<Section id="about" name="About Me" textColor="text-red-500" />);
+    render(
+      <Section
+        id="about"
+        name="About Me"
+        textColor="text-red-500"
+        glow="bg-pink-500"
+      />,
+    );
     expect(screen.getByText("About Me")).toBeInTheDocument();
   });
 
   it("has correct id", () => {
     const { container } = render(
-      <Section id="about" name="About Me" textColor="text-red-500" />,
+      <Section
+        id="about"
+        name="About Me"
+        textColor="text-red-500"
+        glow="bg-pink-500"
+      />,
     );
 
     expect(container.querySelector("section")).toHaveAttribute("id", "about");
@@ -22,6 +34,7 @@ describe("Section", () => {
         id="about"
         name="About Me"
         textColor="text-red-500"
+        glow="bg-pink-500"
         text="Hello I am Joni"
       />,
     );
@@ -31,7 +44,12 @@ describe("Section", () => {
 
   it("does not render text when not provided", () => {
     const { container } = render(
-      <Section id="about" name="About Me" textColor="text-red-500" />,
+      <Section
+        id="about"
+        name="About Me"
+        textColor="text-red-500"
+        glow="bg-pink-500"
+      />,
     );
 
     expect(container.querySelector("p")).not.toBeInTheDocument();
@@ -43,6 +61,7 @@ describe("Section", () => {
         id="skills"
         name="Skills"
         textColor="text-blue-500"
+        glow="bg-pink-500"
         items={["React", "TypeScript"]}
       />,
     );
@@ -57,6 +76,7 @@ describe("Section", () => {
         id="links"
         name="Links"
         textColor="text-blue-500"
+        glow="bg-pink-500"
         items={[
           { label: "GitHub", href: "https://github.com" },
           { label: "Portfolio", href: "https://example.com" },
@@ -86,6 +106,7 @@ describe("Section", () => {
         id="mixed"
         name="Mixed"
         textColor="text-purple-500"
+        glow="bg-pink-500"
         items={["React", { label: "GitHub", href: "https://github.com" }]}
       />,
     );
@@ -96,7 +117,12 @@ describe("Section", () => {
 
   it("does not render list when items are not provided", () => {
     const { container } = render(
-      <Section id="empty" name="Empty" textColor="text-gray-500" />,
+      <Section
+        id="empty"
+        name="Empty"
+        textColor="text-gray-500"
+        glow="bg-pink-500"
+      />,
     );
 
     expect(container.querySelector("ul")).not.toBeInTheDocument();
