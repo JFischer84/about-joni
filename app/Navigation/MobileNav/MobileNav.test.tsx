@@ -1,8 +1,9 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { MobileNav } from "./MobileNav";
 import React from "react";
+import { NavItemType } from "@/app/Navigation/types";
 
-const mockNavItems = [
+const mockNavItems: NavItemType[] = [
   {
     id: "about",
     name: "About Me",
@@ -14,7 +15,7 @@ const mockNavItems = [
     name: "Top",
     color: "bg-green-400",
     shadow: "shadow",
-  },
+  }
 ];
 
 describe("MobileNav", () => {

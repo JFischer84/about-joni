@@ -1,8 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import { DesktopNav } from "./DesktopNav";
 import React from "react";
+import { NavItemType } from "@/app/Navigation/types";
 
-const mockNavItems = [
+const mockNavItems: NavItemType[] = [
   {
     id: "about",
     name: "About Me",

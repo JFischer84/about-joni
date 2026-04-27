@@ -1,7 +1,6 @@
 import { ComponentProps } from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 
-import "@testing-library/jest-dom";
 import Home from "./page";
 
 jest.mock("next/image", () => {
